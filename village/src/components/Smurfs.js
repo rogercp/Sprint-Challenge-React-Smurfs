@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import Smurf from './Smurf';
+
+
+const SmurfStyle=styled.div`
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+`
+
+
+
 
 class Smurfs extends Component {
   render() {
@@ -8,6 +19,7 @@ class Smurfs extends Component {
       <div className="Smurfs">
         <h1>Smurf Village</h1>
         <ul>
+        <SmurfStyle>
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
@@ -16,9 +28,11 @@ class Smurfs extends Component {
                 age={smurf.age}
                 height={smurf.height}
                 key={smurf.id}
+                deleteSmurf={this.props.deleteSmurf}
               />
             );
           })}
+          </SmurfStyle>
         </ul>
       </div>
     );

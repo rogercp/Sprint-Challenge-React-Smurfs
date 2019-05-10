@@ -42,9 +42,6 @@ class SmurfForm extends Component {
           this.addSmurf(same);
           this.routeHome(same);
         }}
-        
-        
-        
         >
           <input
             onChange={this.handleInputChange}
@@ -73,4 +70,3 @@ class SmurfForm extends Component {
 
 export default SmurfForm;
 
-// {this.addSmurf} 
