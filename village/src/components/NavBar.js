@@ -4,31 +4,48 @@ import { NavLink } from 'react-router-dom'
 
 
 
-const Navigation=
+const Navigation=styled.div`
+  display:flex;
+  justify-content:space-around;
+
+`
+const NavRight=styled.div`
+  display:flex;
+  justify-content:space-between;
+
+  h3{
+    margin-right:10px;
+
+    .activeNavButton{
+      color:red;
+    }
+  }
+
+`
 
 
 
 
 const NavBar = props => {
     return (
-      <div>
-      <h2>SmurfCity</h2>
-      <div >
+      <Navigation>
+      <h2>Smurfs</h2>
+      <NavRight >
       <h3>
-            <NavLink to="/">
+            <NavLink style={{ textDecoration: 'none' }} exact to="/"activeClassName="activeNavButton">
                 Home
             </NavLink>
       </h3>
 
       <h3>
-            <NavLink to="/smurf-form">
+            <NavLink style={{ textDecoration: 'none' }} to="/smurf-form" activeClassName="activeNavButton">
               Add Smurf
             </NavLink>
       </h3>
       
       
-      </div>
-      </div>
+      </NavRight>
+      </Navigation>
     );
   };
   
